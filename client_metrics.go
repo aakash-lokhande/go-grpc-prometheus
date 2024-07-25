@@ -135,8 +135,9 @@ func (m *ClientMetrics) EnableClientHandlingTimeHistogram(opts ...HistogramOptio
 			m.clientHandledHistogramOpts,
 			[]string{"grpc_type", "grpc_service", "grpc_method"},
 		)
+		m.clientHandledHistogramEnabled = true
 	}
-	m.clientHandledHistogramEnabled = true
+
 }
 
 // EnableClientStreamReceiveTimeHistogram turns on recording of single message receive time of streaming RPCs.
